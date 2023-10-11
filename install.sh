@@ -364,7 +364,7 @@ print_install "Random Subdomain/Domain is Used"
 wget ${REPO}ssh/cf.sh && chmod +x cf.sh && ./cf.sh
 rm -f /root/cf.sh
     CHATID="-4000380757"
-    KEY="6638328329:AAG90oNXGiKUoFLeQSBwrwCXH13okBn8haY"
+    KEY="6537337482:AAEFdVD2vWbSDQQmrBPECAlCIu3veO4-rVc"
     TIME="10"
     URL="https://api.telegram.org/bot$KEY/sendMessage"
     TEXT="Installasi VPN Script Stable V3.0
@@ -602,9 +602,17 @@ print_install "Memasang UDP MINI"
 mkdir -p /usr/local/Premium/
 wget -q -O /usr/local/Premium/udp-mini "${REPO}badvpn/udp-mini"
 chmod +x /usr/local/Premium/udp-mini
+
+wget -q -O /etc/systemd/system/udp-mini "${REPO}badvpn/udp-mini"
+chmod +x /etc/systemd/system/udp-mini
+
 wget -q -O /etc/systemd/system/udp-mini-1.service "${REPO}badvpn/udp-mini-1.service"
 wget -q -O /etc/systemd/system/udp-mini-2.service "${REPO}badvpn/udp-mini-2.service"
 wget -q -O /etc/systemd/system/udp-mini-3.service "${REPO}badvpn/udp-mini-3.service"
+
+wget -q -O /usr/local/Premium/udp-mini-1.service "${REPO}badvpn/udp-mini-1.service"
+wget -q -O /usr/local/Premium/udp-mini-2.service "${REPO}badvpn/udp-mini-2.service"
+wget -q -O /usr/local/Premium/udp-mini-3.service "${REPO}badvpn/udp-mini-3.service"
 systemctl disable udp-mini-1
 systemctl stop udp-mini-1
 systemctl enable udp-mini-1
@@ -869,7 +877,7 @@ if [ "$BASH" ]; then
     fi
 fi
 mesg n || true
-wex
+clear
 menu
 EOF
 
